@@ -9,24 +9,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+
       - name: AWS Configure
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+
       - name: Deploy
         uses: aws-actions/aws-cloudformation-deploy@v1
         with:
           stack-name: TD2DBStack
           template-file: ./cf-stacks/rds_stack.yaml
-          capabilities: CAPABILITY_IAM
           parameters: |
-            MasterUsername=${{secrets.MASTERUSERNAME}}
-            MasterUserPassword=${{secrets.MASTERUSERPASSWORD}}
-
+            MasterUsername=${{secrets.MASTER_USERNAME}}
+            MasterUserPassword=${{secrets.MASTER_USER_PASSWORD}}
