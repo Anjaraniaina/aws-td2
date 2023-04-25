@@ -1,4 +1,4 @@
-name: CI
+name: CD
 
 on:
   push:
@@ -25,8 +25,8 @@ jobs:
       - name: Deploy
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          stack-name: TD2DBStack
-          template: cf-stacks/rds_stack.yaml
+          name: TD2DBStack
+          template: cf-stacks/rds_stack.yml
           parameters: |
             MasterUsername=${{secrets.MASTER_USERNAME}}
             MasterUserPassword=${{secrets.MASTER_USER_PASSWORD}}
