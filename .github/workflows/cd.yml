@@ -26,7 +26,7 @@ jobs:
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
           stack-name: TD2DBStack
-          template-file: ./cf-stacks/rds_stack.yaml
+          template-file: cf-stacks/rds_stack.yaml
           parameters: |
             MasterUsername=${{secrets.MASTER_USERNAME}}
             MasterUserPassword=${{secrets.MASTER_USER_PASSWORD}}
