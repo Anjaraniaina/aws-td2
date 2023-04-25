@@ -3,7 +3,7 @@ Parameters:
     Type: String
     Description: The master username 
   MasterUserPassword:
-    Type: SecureString
+    Type: String
     Description: The master user password
   DBInstanceName:
     Type: String
