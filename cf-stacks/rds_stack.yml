@@ -1,11 +1,9 @@
 Parameters:
   MasterUsername:
     Type: String
-    Default: admin
     Description: The master username 
   MasterUserPassword:
-    Type: String
-    NoEcho: true
+    Type: SecureString
     Description: The master user password
   DBInstanceName:
     Type: String
