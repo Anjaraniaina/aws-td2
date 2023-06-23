@@ -32,5 +32,5 @@ jobs:
           name: TD2DBStack
           template: cf-stacks/rds_stack.yml
           parameter-overrides: |
-            "MasterUsername=${{secrets.MASTER_USERNAME}}, 
-            MasterUserPassword=${{secrets.MASTER_USER_PASSWORD}}"
+            "MasterUsername=Anjaraniaina, 
+            MasterUserPassword=Anjaraniaina"
