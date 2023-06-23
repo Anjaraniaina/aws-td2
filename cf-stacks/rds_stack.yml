@@ -35,7 +35,7 @@ Resources:
       MasterUserPassword: !Ref MasterUserPasswordParameter
       AllocatedStorage: 5
       MaxAllocatedStorage: 5
-      AvailabilityZone: us-west-3
+      AvailabilityZone: eu-east-1
   
   DatabaseSSM:
     Type: AWS::SSM::Parameter
